@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sadith Saloon - Optimized Hair & Beauty Studio in Gampaha</title>
+    <meta name="description" content="Optimized for all devices! Visit Sadith Saloon in Gampaha for expert hair styling, coloring, skincare & more. Enjoy a seamless experience on mobile or desktop.">
+    <meta name="keywords" content="Sadith Saloon, hair salon Gampaha, beauty salon Gampaha, responsive design, mobile friendly, hairdresser, hair cuts, hair styling, hair coloring, facials, bridal makeup, Sri Lanka">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HairSalon",
+      "name": "Sadith Saloon",
+      "description": "Optimized Modern Hair & Beauty Studio in Gampaha.",
+      // --- !! UPDATE THESE DETAILS !! ---
+      "address": { "@type": "PostalAddress", "streetAddress": "No. 123, Main Street", "addressLocality": "Gampaha", "addressRegion": "WP", "postalCode": "11000", "addressCountry": "LK" },
+      "telephone": "+94 77 123 4567",
+      "image": "https://images.unsplash.com/photo-1599330293280-048ef1e1a61e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "url": "#",
+      "priceRange": "$$",
+      "openingHours": "Mo-Sa 09:00-19:00",
+      "potentialAction": { "@type": "ReserveAction", "target": { "@type": "EntryPoint", "urlTemplate": "#contact", "inLanguage": "en-US", "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/IOSPlatform", "http://schema.org/AndroidPlatform"] }, "result": { "@type": "Reservation", "name": "Book an appointment" } }
+      // --- !! END OF UPDATE SECTION !! ---
+    }
+    </script>
+
+    <style>
+        /* Minimal custom CSS */
+        .fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-section.visible { opacity: 1; transform: translateY(0); }
+        #main-nav a.active { border-bottom: 2px solid #0d9488; /* teal-600 */ }
+        .dark #main-nav a.active { border-bottom-color: #2dd4bf; /* teal-400 */ }
+        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
+        #hero > .container { position: relative; z-index: 2; }
+    </style>
+
+    <script>
+        // Tailwind Config
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { /* Color/Font extensions from previous step */
+                 colors: { 'brand-teal': { light: '#5eead4', DEFAULT: '#14b8a6', dark: '#0d9488' }, 'brand-gray': { light: '#f9fafb', medium: '#e5e7eb', dark: '#374151', 'extradark': '#1f2937' } },
+                 fontFamily: { sans: ['Poppins', 'sans-serif'] } } }
+        }
+    </script>
+
+</head>
+<body class="bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-300 antialiased transition-colors duration-300 text-base leading-relaxed"> <header id="main-header" class="py-3 sm:py-4 fixed w-full top-0 left-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="#hero" id="header-logo" class="text-xl sm:text-2xl font-bold text-white dark:text-white transition-colors duration-300">Sadith Saloon</a>
+
+            <nav id="main-nav" class="hidden md:block">
+                <ul class="flex space-x-5 lg:space-x-7" id="desktop-nav-links"> <li><a href="#hero" class="font-medium pb-1 border-b-2 border-transparent transition duration-300 text-sm lg:text-base">Home</a></li>
+                    <li><a href="#about" class="font-medium pb-1 border-b-2 border-transparent transition duration-300 text-sm lg:text-base">About Us</a></li>
+                    <li><a href="#services" class="font-medium pb-1 border-b-2 border-transparent transition duration-300 text-sm lg:text-base">Services</a></li>
+                    <li><a href="#contact" class="font-medium pb-1 border-b-2 border-transparent transition duration-300 text-sm lg:text-base">Contact</a></li>
+                </ul>
+            </nav>
+
+             <div class="flex items-center space-x-3 sm:space-x-4">
+                 <button id="theme-toggle" class="text-white dark:text-white hover:text-teal-300 dark:hover:text-teal-300 transition duration-300 focus:outline-none p-1" aria-label="Toggle theme"> <svg id="theme-toggle-sun" class="w-5 h-5 sm:w-6 sm:h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="theme-toggle-moon" class="w-5 h-5 sm:w-6 sm:h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+
+                 <div class="md:hidden">
+                     <button id="mobile-menu-button" class="focus:outline-none p-1"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                     </button>
+                 </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white dark:bg-gray-800 shadow-lg border-t border-gray-200 dark:border-gray-700"> <ul class="flex flex-col py-2"> <li><a href="#hero" class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium transition duration-150">Home</a></li>
+                 <li><a href="#about" class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium transition duration-150">About Us</a></li>
+                 <li><a href="#services" class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium transition duration-150">Services</a></li>
+                 <li><a href="#contact" class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium transition duration-150">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="hero" class="relative h-screen flex items-center justify-center text-center text-white pt-20 sm:pt-24 overflow-hidden"> <div class="absolute inset-0 z-0">
+             <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Beautiful modern salon interior background" class="w-full h-full object-cover">
+             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent opacity-90"></div> </div>
+
+        <div id="particles-js"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight drop-shadow-lg">Elegance Redefined</h1>
+            <p class="text-base sm:text-lg lg:text-xl mb-8 max-w-xl mx-auto text-gray-100 drop-shadow">Discover Your Perfect Look at Sadith Saloon, Gampaha</p>
+            <a href="#contact" class="bg-teal-500 hover:bg-teal-600 dark:bg-teal-600 dark:hover:bg-teal-500 text-white font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full text-sm sm:text-base transition duration-300 transform hover:scale-105 shadow-lg">
+                Book Appointment
+            </a>
+        </div>
+    </section>
+
+    <main>
+        <section id="about" class="py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-gray-800 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1600948836849-8d42c55dadc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                             alt="Stylist consulting with a client in Sadith Saloon" class="rounded-lg shadow-lg w-full max-w-md mx-auto md:max-w-full"> </div>
+                    <div class="about-text text-center md:text-left"> <h2 class="text-3xl lg:text-4xl font-bold text-teal-600 dark:text-teal-400 mb-4">About Sadith Saloon</h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm sm:text-base">
+                            Sadith Saloon brings a fresh, modern approach...
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm sm:text-base">
+                            Our team stays updated...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center text-teal-600 dark:text-teal-400 mb-4">Our Expert Services</h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 lg:mb-16 text-sm sm:text-base">
+                    We offer a wide range of services...
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="service-item bg-gray-50 dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow hover:shadow-lg dark:shadow-md dark:hover:shadow-xl transition duration-300 text-center flex flex-col items-center"> <div class="text-3xl sm:text-4xl text-teal-500 dark:text-teal-400 mb-3 sm:mb-4">✂️</div>
+                         <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Precision Haircuts</h3>
+                         <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">Tailored cuts...</p>
+                    </div>
+                     <div class="service-item bg-gray-50 dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow hover:shadow-lg dark:shadow-md dark:hover:shadow-xl transition duration-300 text-center flex flex-col items-center">
+                        <div class="text-3xl sm:text-4xl text-teal-500 dark:text-teal-400 mb-3 sm:mb-4">🎨</div>
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Creative Coloring</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">Highlights, balayage...</p>
+                    </div>
+                    <div class="service-item bg-gray-50 dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow hover:shadow-lg dark:shadow-md dark:hover:shadow-xl transition duration-300 text-center flex flex-col items-center">
+                        <div class="text-3xl sm:text-4xl text-teal-500 dark:text-teal-400 mb-3 sm:mb-4">✨</div>
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Rejuvenating Facials</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">Customized skin treatments...</p>
+                    </div>
+                    <div class="service-item bg-gray-50 dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow hover:shadow-lg dark:shadow-md dark:hover:shadow-xl transition duration-300 text-center flex flex-col items-center">
+                        <div class="text-3xl sm:text-4xl text-teal-500 dark:text-teal-400 mb-3 sm:mb-4">💅</div>
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Manicure & Pedicure</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">Pamper your hands...</p>
+                    </div>
+                    <div class="service-item bg-gray-50 dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow hover:shadow-lg dark:shadow-md dark:hover:shadow-xl transition duration-300 text-center flex flex-col items-center">
+                        <div class="text-3xl sm:text-4xl text-teal-500 dark:text-teal-400 mb-3 sm:mb-4">👰</div>
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Bridal Beauty</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">Complete hair and makeup...</p>
+                    </div>
+                     <div class="service-item bg-gray-50 dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow hover:shadow-lg dark:shadow-md dark:hover:shadow-xl transition duration-300 text-center flex flex-col items-center">
+                         <div class="text-3xl sm:text-4xl text-teal-500 dark:text-teal-400 mb-3 sm:mb-4">💆‍♀️</div>
+                         <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Hair Treatments</h3>
+                         <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">Keratin smoothing...</p>
+                     </div>
+                </div>
+                 <div class="text-center mt-12 lg:mt-16">
+                      <a href="#contact" class="bg-teal-500 hover:bg-teal-600 dark:bg-teal-600 dark:hover:bg-teal-500 text-white font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full text-sm sm:text-base transition duration-300 transform hover:scale-105">
+                        View Full Service Menu
+                      </a>
+                 </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-20 lg:py-24 bg-gray-100 dark:bg-gray-800 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-teal-600 dark:text-teal-400 mb-4">Get In Touch</h2>
+                <p class="max-w-xl mx-auto mb-12 lg:mb-16 text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                    Ready for your transformation? Contact us...
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-4xl mx-auto text-center md:text-left">
+                     <div class="contact-item md:border-r md:border-gray-200 dark:md:border-gray-700 md:pr-8 lg:pr-10"> <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Address</h3>
+                         <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">No. 123, Main Street<br>Gampaha, Sri Lanka</p>
+                         </div>
+                     <div class="contact-item md:border-r md:border-gray-200 dark:md:border-gray-700 md:px-4 lg:px-10"> <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Contact</h3>
+                         <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Phone: <a href="tel:+94771234567" class="hover:text-teal-600 dark:hover:text-teal-400">+94 77 123 4567</a></p> <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Email: <a href="mailto:info@sadithsaloon.lk" class="hover:text-teal-600 dark:hover:text-teal-400">info@sadithsaloon.lk</a></p> </div>
+                     <div class="contact-item md:pl-4 lg:pl-10"> <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Hours</h3>
+                          <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                          <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Sunday: Closed</p>
+                           </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-200 dark:bg-gray-900 text-gray-600 dark:text-gray-400 py-6 sm:py-8 text-center"> <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-xs sm:text-sm">&copy; <span id="current-year"></span> Sadith Saloon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Elements (remain the same) ---
+        const header = document.getElementById('main-header');
+        // ... other element selections ...
+        const desktopNavLinks = document.querySelectorAll('#desktop-nav-links a');
+        // ... rest of the JS from previous step ...
+        const themeToggleButton = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-toggle-sun');
+        const moonIcon = document.getElementById('theme-toggle-moon');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButtonIcon = mobileMenuButton.querySelector('svg');
+        const headerLogo = document.getElementById('header-logo');
+
+
+        // --- Transparent Header Logic (Optimized Class Handling) ---
+        const scrollThreshold = 50;
+        function handleScroll() {
+            const isScrolled = window.pageYOffset > scrollThreshold;
+            const isDark = document.documentElement.classList.contains('dark');
+
+            // Header background & shadow
+            header.classList.toggle('bg-white', isScrolled && !isDark);
+            header.classList.toggle('dark:bg-gray-800', isScrolled && isDark);
+            header.classList.toggle('shadow-md', isScrolled);
+
+            // Logo color
+            headerLogo.classList.toggle('text-white', !isScrolled);
+            headerLogo.classList.toggle('dark:text-white', !isScrolled); // Keep white on dark transparent
+            headerLogo.classList.toggle('text-teal-600', isScrolled && !isDark);
+            headerLogo.classList.toggle('dark:text-teal-400', isScrolled && isDark);
+
+            // Theme toggle button color
+            themeToggleButton.classList.toggle('text-white', !isScrolled);
+            themeToggleButton.classList.toggle('dark:text-white', !isScrolled); // Keep white on dark transparent
+            themeToggleButton.classList.toggle('text-gray-700', isScrolled && !isDark);
+            themeToggleButton.classList.toggle('dark:text-gray-300', isScrolled && isDark);
+
+            // Mobile menu icon color
+             mobileMenuButtonIcon.classList.toggle('text-white', !isScrolled);
+            mobileMenuButtonIcon.classList.toggle('dark:text-white', !isScrolled);
+            mobileMenuButtonIcon.classList.toggle('text-gray-700', isScrolled && !isDark);
+            mobileMenuButtonIcon.classList.toggle('dark:text-gray-300', isScrolled && isDark);
+
+
+            // Desktop nav links text color & hover border color
+            desktopNavLinks.forEach(link => {
+                 // Text Color
+                 link.classList.toggle('text-white', !isScrolled);
+                 link.classList.toggle('dark:text-gray-100', !isScrolled);
+                 link.classList.toggle('text-gray-700', isScrolled && !isDark);
+                 link.classList.toggle('dark:text-gray-200', isScrolled && isDark);
+
+                  // Hover Text Color (Example - might not be needed if border changes)
+                 link.classList.toggle('hover:text-gray-300', !isScrolled && !isDark); // Hover light on transparent light
+                 link.classList.toggle('dark:hover:text-gray-300', !isScrolled && isDark); // Hover light on transparent dark
+                 link.classList.toggle('hover:text-teal-600', isScrolled && !isDark); // Hover teal on solid light
+                 link.classList.toggle('dark:hover:text-teal-400', isScrolled && isDark); // Hover teal on solid dark
+
+                 // Hover Border Color
+                 link.classList.toggle('hover:border-gray-300', !isScrolled); // Lighter border on transparent
+                 link.classList.toggle('dark:hover:border-gray-400', !isScrolled && isDark); // Lighter border on transparent dark
+                 link.classList.toggle('hover:border-teal-500', isScrolled && !isDark); // Teal border on solid light
+                 link.classList.toggle('dark:hover:border-teal-400', isScrolled && isDark); // Teal border on solid dark
+            });
+        }
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+
+
+        // --- Mobile Menu Toggle (remains the same) ---
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+
+        // --- Dark Mode Toggle Logic (remains the same) ---
+        function updateThemeIcon(isDarkMode) {
+            moonIcon.classList.toggle('hidden', isDarkMode);
+            sunIcon.classList.toggle('hidden', !isDarkMode);
+        }
+         function applyTheme(theme) {
+             const isDark = theme === 'dark';
+             document.documentElement.classList.toggle('dark', isDark);
+             updateThemeIcon(isDark);
+             localStorage.theme = theme;
+             handleScroll(); // Re-apply scroll styles for new theme
+             // Consider reloading particles if colors depend heavily on theme
+             // initParticles();
+         }
+        themeToggleButton.addEventListener('click', () => {
+             applyTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark');
+        });
+        // Apply initial theme
+        const storedTheme = localStorage.theme;
+        const osPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(storedTheme === 'dark' || (!storedTheme && osPrefersDark) ? 'dark' : 'light');
+
+
+        // --- Intersection Observer (remains the same) ---
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => entry.target.classList.toggle('visible', entry.isIntersecting));
+        }, observerOptions);
+        sections.forEach(section => observer.observe(section));
+
+
+        // --- Footer Year (remains the same) ---
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+
+        // --- Active Nav Link (remains the same logic) ---
+        const navLinks = document.querySelectorAll('#main-nav a, #mobile-menu a');
+        const pageSections = document.querySelectorAll('main section');
+        function setActiveLink() {
+             let currentSectionId = 'hero';
+             const scrollPosition = window.pageYOffset;
+             pageSections.forEach(section => {
+                 const sectionTop = section.offsetTop;
+                 const offset = window.innerHeight * 0.4;
+                 if (scrollPosition >= (sectionTop - offset)) { currentSectionId = section.getAttribute('id'); }
+             });
+              if ((window.innerHeight + scrollPosition) >= document.body.offsetHeight - 50) {
+                  const lastSection = pageSections[pageSections.length - 1];
+                   if (lastSection) currentSectionId = lastSection.getAttribute('id');
+              }
+              if (scrollPosition < window.innerHeight * 0.6) { currentSectionId = 'hero'; }
+
+             navLinks.forEach(link => {
+                 link.classList.toggle('active', link.getAttribute('href') === `#${currentSectionId}`);
+             });
+         }
+         window.addEventListener('scroll', setActiveLink);
+         setActiveLink();
+
+
+        // --- Particles Init (Optimized Config, Consider Mobile Performance) ---
+        function initParticles() {
+            const isDarkMode = document.documentElement.classList.contains('dark');
+            const particleColor = isDarkMode ? "#5eead4" : "#0d9488"; // Teal-300 / Teal-600
+            const linkColor = isDarkMode ? "#4b5563" : "#9ca3af"; // Gray-600 / Gray-400
+
+            // --- Optional: Reduce particles on small screens ---
+            let particleCount = window.innerWidth < 768 ? 40 : 80; // Example: Fewer particles below md breakpoint
+
+            tsParticles.load("particles-js", {
+                 particles: {
+                    number: { value: particleCount, density: { enable: true, value_area: 800 } }, // Responsive count
+                    color: { value: particleColor },
+                    shape: { type: "circle" },
+                    opacity: { value: {min: 0.3, max: 0.7}, random: true },
+                    size: { value: {min: 1, max: 3}, random: true },
+                    links: { color: linkColor, distance: 130, enable: true, opacity: 0.3, width: 1 },
+                    move: { enable: true, speed: 1.5, direction: "none", random: true, straight: false, outModes: "out" } // random direction
+                },
+                interactivity: {
+                    events: { onhover: { enable: true, mode: "bubble" }, resize: true },
+                    modes: { bubble: { distance: 150, duration: 2, opacity: 0.8, size: 5 } }
+                },
+                 background: { color: 'transparent' },
+                 detectRetina: true
+             }).catch(error => console.error("Error loading particles:", error));
+        }
+        window.addEventListener('load', initParticles);
+
+    </script>
+
+</body>
+</html>
